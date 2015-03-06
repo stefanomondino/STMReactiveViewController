@@ -10,19 +10,18 @@
 Pod::Spec.new do |s|
   s.name             = "STMReactiveViewController"
   s.version          = "0.1.0"
-  s.summary          = "A short description of STMReactiveViewController."
+  s.summary          = "Utilities for UIViewController made simple with ReactiveCocoa signals"
   s.description      = <<-DESC
-                       An optional longer description of STMReactiveViewController
-
+                       STMReactiveViewController includes a collection of methods that aim to simplify common task such as passing of parameters in storyboard segues, presenting alerts and actionsheets and more.
                        * Markdown format.
                        * Don't worry about the indent, we strip it!
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/STMReactiveViewController"
+  s.homepage         = "https://github.com/stefanomondino/STMReactiveViewController"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Stefano Mondino" => "stefano.mondino.dev@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/STMReactiveViewController.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/stefanomondino/STMReactiveViewController.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/puntoste>'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
@@ -33,7 +32,7 @@ Pod::Spec.new do |s|
   }
 
    s.public_header_files = 'Pod/Classes/**/*.h'
-    # s.frameworks = 'UIKit', 'MapKit'
+   # s.frameworks = 'UIKit', 'MapKit'
    s.dependency 'ReactiveCocoa', '~> 2.3.1'
    s.dependency 'libextobjc/EXTScope'
 end
