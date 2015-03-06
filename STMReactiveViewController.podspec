@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.license          = 'MIT'
   s.author           = { "Stefano Mondino" => "stefano.mondino.dev@gmail.com" }
   s.source           = { :git => "https://github.com/stefanomondino/STMReactiveViewController.git", :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/puntoste>'
+  s.social_media_url = 'https://twitter.com/puntoste'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
