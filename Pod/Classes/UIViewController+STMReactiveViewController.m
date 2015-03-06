@@ -48,6 +48,10 @@
     return [self rac_signalForSelector:@selector(viewWillAppear:)];
 }
 
+- (RACSignal*) rac_viewDidAppear {
+    return [self rac_signalForSelector:@selector(viewDidAppear:)];
+}
+
 - (RACSignal*) rac_firstViewWillAppear {
     return [[self rac_viewWillAppear] take:1];
 }

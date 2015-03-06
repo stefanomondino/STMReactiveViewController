@@ -5,7 +5,10 @@
 [![License](https://img.shields.io/cocoapods/l/STMReactiveViewController.svg?style=flat)](http://cocoadocs.org/docsets/STMReactiveViewController)
 [![Platform](https://img.shields.io/cocoapods/p/STMReactiveViewController.svg?style=flat)](http://cocoadocs.org/docsets/STMReactiveViewController)
 
+
 ## Usage
+
+This library comes out as a collection of methods and common actions of view controllers that are simplified through ReactiveCocoa signals usage.
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 

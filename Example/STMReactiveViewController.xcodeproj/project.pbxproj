@@ -22,6 +22,7 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		74B95484BDDE3C1BAE64DC57 /* libPods-STMReactiveViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3490F1AD41D4CBB264479FE /* libPods-STMReactiveViewController.a */; };
 		7BCB8D3A1AA8623900F4FFA9 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BCB8D391AA8623900F4FFA9 /* Storyboard.storyboard */; };
+		7BCB8D511AA9A22800F4FFA9 /* STMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB8D501AA9A22800F4FFA9 /* STMDetailViewController.m */; };
 		CCB1AF06C6FDB2407FA5DE2E /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D927F08A73D7C191EE688A /* libPods-Tests.a */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,8 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		625BBD231A93CBA6C336CEC2 /* STMReactiveViewController.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = STMReactiveViewController.podspec; path = ../STMReactiveViewController.podspec; sourceTree = "<group>"; };
 		7BCB8D391AA8623900F4FFA9 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = STMReactiveViewController/Storyboard.storyboard; sourceTree = "<group>"; };
+		7BCB8D4F1AA9A22800F4FFA9 /* STMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMDetailViewController.h; sourceTree = "<group>"; };
+		7BCB8D501AA9A22800F4FFA9 /* STMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMDetailViewController.m; sourceTree = "<group>"; };
 		A3490F1AD41D4CBB264479FE /* libPods-STMReactiveViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-STMReactiveViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDF5F99C1C5C3E070587B2A2 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +138,8 @@
 				6003F59D195388D20070C39A /* STMAppDelegate.m */,
 				6003F5A5195388D20070C39A /* STMViewController.h */,
 				6003F5A6195388D20070C39A /* STMViewController.m */,
+				7BCB8D4F1AA9A22800F4FFA9 /* STMDetailViewController.h */,
+				7BCB8D501AA9A22800F4FFA9 /* STMDetailViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -359,6 +364,7 @@
 			files = (
 				6003F59E195388D20070C39A /* STMAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* STMViewController.m in Sources */,
+				7BCB8D511AA9A22800F4FFA9 /* STMDetailViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

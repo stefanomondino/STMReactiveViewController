@@ -41,14 +41,20 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MlM-is-JJq">
-                                <rect key="frame" x="273" y="228" width="54" height="30"/>
+                                <rect key="frame" x="273" y="211" width="54" height="30"/>
                                 <state key="normal" title="MODAL">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvz-JP-8Hn">
-                                <rect key="frame" x="251" y="285" width="98" height="30"/>
+                                <rect key="frame" x="251" y="261" width="98" height="30"/>
                                 <state key="normal" title="SHOW ALERT">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QkW-RG-fdZ">
+                                <rect key="frame" x="220" y="311" width="160" height="30"/>
+                                <state key="normal" title="SHOW ACTION SHEET">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -56,15 +62,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uvz-JP-8Hn" firstAttribute="centerX" secondItem="MlM-is-JJq" secondAttribute="centerX" id="32E-ss-W0I"/>
-                            <constraint firstItem="MlM-is-JJq" firstAttribute="top" secondItem="bLD-Jj-A8j" secondAttribute="bottom" constant="37" id="YBx-QO-1Q9"/>
+                            <constraint firstItem="QkW-RG-fdZ" firstAttribute="top" secondItem="uvz-JP-8Hn" secondAttribute="bottom" constant="20" id="Xme-tW-67w"/>
+                            <constraint firstItem="MlM-is-JJq" firstAttribute="top" secondItem="bLD-Jj-A8j" secondAttribute="bottom" constant="20" id="YBx-QO-1Q9"/>
+                            <constraint firstItem="QkW-RG-fdZ" firstAttribute="centerX" secondItem="uvz-JP-8Hn" secondAttribute="centerX" id="cLa-Pb-1gZ"/>
                             <constraint firstAttribute="centerXWithinMargins" secondItem="bLD-Jj-A8j" secondAttribute="centerXWithinMargins" id="dko-8v-ubl"/>
                             <constraint firstItem="bLD-Jj-A8j" firstAttribute="centerX" secondItem="MlM-is-JJq" secondAttribute="centerX" id="hGB-NG-MRG"/>
                             <constraint firstAttribute="centerY" secondItem="bLD-Jj-A8j" secondAttribute="centerY" constant="124" id="jTs-dM-Hg5"/>
-                            <constraint firstItem="uvz-JP-8Hn" firstAttribute="top" secondItem="MlM-is-JJq" secondAttribute="bottom" constant="27" id="xQf-a9-qdL"/>
+                            <constraint firstItem="uvz-JP-8Hn" firstAttribute="top" secondItem="MlM-is-JJq" secondAttribute="bottom" constant="20" id="xQf-a9-qdL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1oZ-7e-GEb"/>
                     <connections>
+                        <outlet property="btn_actionsheet" destination="QkW-RG-fdZ" id="318-5U-e2m"/>
                         <outlet property="btn_alert" destination="uvz-JP-8Hn" id="wfT-S1-5DZ"/>
                         <outlet property="btn_goto2" destination="bLD-Jj-A8j" id="BMh-re-sCR"/>
                         <outlet property="btn_modal" destination="MlM-is-JJq" id="4Fz-Zf-lSG"/>
@@ -76,25 +85,6 @@
             </objects>
             <point key="canvasLocation" x="799" y="350"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Rvc-LU-sri">
-            <objects>
-                <viewController id="Wk2-dX-pJ3" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tjF-4n-ru7"/>
-                        <viewControllerLayoutGuide type="bottom" id="RAO-tP-s2r"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vKl-OC-Z0s">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="7in-8p-OiV"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ym1-7A-CqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="799" y="1042"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="hza-0o-VHD">
             <objects>
@@ -104,17 +94,17 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Wk2-dX-pJ3" kind="relationship" relationship="rootViewController" id="ANw-Dt-f5Z"/>
+                        <segue destination="cbT-OB-GGD" kind="relationship" relationship="rootViewController" id="rKz-Yl-EpL"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rh6-xQ-p8l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="19" y="1042"/>
+            <point key="canvasLocation" x="799" y="1101"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="6oQ-Ic-8tk">
             <objects>
-                <viewController id="cbT-OB-GGD" sceneMemberID="viewController">
+                <viewController id="cbT-OB-GGD" customClass="STMDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bnz-92-M4s"/>
                         <viewControllerLayoutGuide type="bottom" id="CgA-NG-oh5"/>
@@ -123,9 +113,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELL DONE!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJa-f5-6GF">
-                                <rect key="frame" x="249" y="289" width="103" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WELL DONE!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJa-f5-6GF">
+                                <rect key="frame" x="47" y="289" width="507" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -134,12 +124,23 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="wJa-f5-6GF" secondAttribute="centerX" id="Puc-OP-XSC"/>
                             <constraint firstAttribute="centerY" secondItem="wJa-f5-6GF" secondAttribute="centerY" id="aPl-LM-zoE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wJa-f5-6GF" secondAttribute="trailing" constant="30" id="jN5-Rj-frN"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ka8-s0-ete">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="yla-By-7Sp"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btn_close" destination="yla-By-7Sp" id="EgJ-1T-1YN"/>
+                        <outlet property="lbl_text" destination="wJa-f5-6GF" id="1nL-98-k6O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1aE-62-7pc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1498" y="350"/>
+            <point key="canvasLocation" x="1653" y="350"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="pqi-eV-MTx"/>
+    </inferredMetricsTieBreakers>
 </document>

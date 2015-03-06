@@ -12,6 +12,15 @@
 
 
 /**
+ Convenience signal for viewWillAppear calls.
+ */
+- (RACSignal*) rac_viewWillAppear;
+/**
+ Convenience signal for viewDidAppear calls.
+ */
+- (RACSignal*) rac_viewDidAppear;
+
+/**
  Convenience signal that completes the first time viewWillAppear is called after subscribtion.
  @return A signal that completes after first viewWillAppear call.
  */
