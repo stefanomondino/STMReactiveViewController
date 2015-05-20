@@ -115,13 +115,17 @@
         }
         else {
             
-            UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:nil cancelButtonTitle:cancelButtonTitle destructiveButtonTitle:nil otherButtonTitles: nil];
+            UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles: nil];
             for (NSString* title in otherButtonTitles) {
                 [actionSheet addButtonWithTitle:title];
             }
+            [actionSheet addButtonWithTitle:cancelButtonTitle];
             actionSheet.cancelButtonIndex = otherButtonTitles.count;
             [actionSheet showInView:self.view];
-            return [actionSheet rac_buttonClickedSignal];
+            return [[actionSheet rac_buttonClickedSignal] map:^id(NSNumber* value) {
+                return @(([value integerValue]+1)%(otherButtonTitles.count+1));
+            }];
+           
         }
         return [RACSignal empty];
     }] take:1];

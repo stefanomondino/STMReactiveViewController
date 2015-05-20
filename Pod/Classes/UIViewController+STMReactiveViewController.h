@@ -47,7 +47,10 @@
 - (void) performSegueWithIdentifier:(NSString *)identifier viewModel:(id) viewModel;
 
 
-
+/** 
+ Displays an alert
+ 
+ */
 - (RACSignal*) rac_showAlertWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSArray*) otherButtonTitles;
 - (RACSignal*) rac_showActionSheetWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSArray*) otherButtonTitles;
 
