@@ -8,6 +8,18 @@
 
 #import "UIViewController+STMReactiveViewController.h"
 #import <EXTScope.h>
+
+
+@implementation NSError (STMReactiveViewController)
+
++ (NSError *)stm_errorWithMessage:(NSString *)message {
+    return [NSError errorWithDomain:@"stm_reactiveViewController" code:0 userInfo:@{@"stm_message":message?:@""}];
+}
+- (NSString *)stm_message {
+    return self.userInfo[@"stm_message"];
+}
+@end
+
 @implementation UIViewController (STMReactiveViewController)
 
 - (void) performSegueWithIdentifier:(NSString *)identifier parameters:(NSDictionary*) dictionary {
@@ -51,13 +63,20 @@
 - (RACSignal*) rac_viewDidAppear {
     return [self rac_signalForSelector:@selector(viewDidAppear:)];
 }
+- (RACSignal*) rac_viewWillDisappear {
+    return [self rac_signalForSelector:@selector(viewWillDisappear:)];
+}
+
+- (RACSignal*) rac_viewDidDisappear {
+    return [self rac_signalForSelector:@selector(viewDidDisappear:)];
+}
 
 - (RACSignal*) rac_firstViewWillAppear {
     return [[self rac_viewWillAppear] take:1];
 }
 
 - (RACSignal*) rac_firstViewDidAppear {
-    return [[self rac_signalForSelector:@selector(viewDidAppear:)] take:1];
+    return [[self rac_viewDidAppear] take:1];
 }
 
 - (RACSignal*) rac_showAlertControllerWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSArray*) otherButtonTitles style:(UIAlertControllerStyle) style {
@@ -129,7 +148,33 @@
         }
         return [RACSignal empty];
     }] take:1];
-    
 }
-
+- (RACSignal*) rac_errorSignalWithMessage:(NSString*)message {
+    return [self rac_showAlertWithTitle:@"!" message:message cancelButtonTitle:@"OK" otherButtonTitles:nil];
+}
+- (UIView*) stm_showLoader {
+    return nil;
+}
+- (void) stm_hideLoader {
+    ;
+}
+- (RACSignal*) rac_showErrorsFromCommand:(RACCommand*) command {
+     @weakify(self);
+    return [command.errors flattenMap:^RACStream *(NSError* value) {
+         @strongify(self);
+        return [self rac_errorSignalWithMessage:value.stm_message];
+    }];
+}
+- (RACSignal*) rac_showLoaderFromCommand:(RACCommand*) command {
+     @weakify(self);
+    return [[[command.executing skip:1] distinctUntilChanged] doNext:^(NSNumber* value) {
+         @strongify(self);
+        if (value.boolValue) {
+            [self stm_showLoader];
+        }
+        else {
+            [self stm_hideLoader];
+        }
+    }];
+}
 @end

@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <ReactiveCocoa.h>
+
+@interface NSError (STMReactiveViewController)
++ (NSError*) stm_errorWithMessage:(NSString*) message;
+- (NSString*) stm_message;
+@end
+
 @interface UIViewController (STMReactiveViewController)
 
 
@@ -19,6 +25,16 @@
  Convenience signal for viewDidAppear calls.
  */
 - (RACSignal*) rac_viewDidAppear;
+
+/**
+ Convenience signal for viewWillDisappear calls.
+ */
+- (RACSignal*) rac_viewWillDisappear;
+
+/**
+ Convenience signal for viewDidDisappear calls.
+ */
+- (RACSignal*) rac_viewDidDisappear;
 
 /**
  Convenience signal that completes the first time viewWillAppear is called after subscribtion.
@@ -46,12 +62,13 @@
  */
 - (void) performSegueWithIdentifier:(NSString *)identifier viewModel:(id) viewModel;
 
+//TODO write documentation
 
-/** 
- Displays an alert
- 
- */
 - (RACSignal*) rac_showAlertWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSArray*) otherButtonTitles;
 - (RACSignal*) rac_showActionSheetWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSArray*) otherButtonTitles;
-
+- (RACSignal*) rac_errorSignalWithMessage:(NSString*)message;
+- (UIView*) stm_showLoader;
+- (void) stm_hideLoader;
+- (RACSignal*) rac_showErrorsFromCommand:(RACCommand*) command;
+- (RACSignal*) rac_showLoaderFromCommand:(RACCommand*) command;
 @end
