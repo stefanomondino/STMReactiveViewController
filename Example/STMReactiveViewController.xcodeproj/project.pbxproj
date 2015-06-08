@@ -21,6 +21,11 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		74B95484BDDE3C1BAE64DC57 /* libPods-STMReactiveViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3490F1AD41D4CBB264479FE /* libPods-STMReactiveViewController.a */; };
+		7B3F5C6B1B25E3AB00DEDE70 /* STMCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F5C6A1B25E3AB00DEDE70 /* STMCellViewModel.m */; };
+		7B3F5C6F1B25E5E000DEDE70 /* STMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F5C6D1B25E5E000DEDE70 /* STMTableViewCell.m */; };
+		7B3F5C701B25E5E000DEDE70 /* STMTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B3F5C6E1B25E5E000DEDE70 /* STMTableViewCell.xib */; };
+		7BCB35AB1B21959300D5CC44 /* STMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB35AA1B21959300D5CC44 /* STMTableViewController.m */; };
+		7BCB35AE1B2195AC00D5CC44 /* STMTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB35AD1B2195AC00D5CC44 /* STMTableViewModel.m */; };
 		7BCB8D3A1AA8623900F4FFA9 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BCB8D391AA8623900F4FFA9 /* Storyboard.storyboard */; };
 		7BCB8D511AA9A22800F4FFA9 /* STMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB8D501AA9A22800F4FFA9 /* STMDetailViewController.m */; };
 		CCB1AF06C6FDB2407FA5DE2E /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D927F08A73D7C191EE688A /* libPods-Tests.a */; };
@@ -63,6 +68,15 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		625BBD231A93CBA6C336CEC2 /* STMReactiveViewController.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = STMReactiveViewController.podspec; path = ../STMReactiveViewController.podspec; sourceTree = "<group>"; };
+		7B3F5C691B25E3AB00DEDE70 /* STMCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMCellViewModel.h; sourceTree = "<group>"; };
+		7B3F5C6A1B25E3AB00DEDE70 /* STMCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMCellViewModel.m; sourceTree = "<group>"; };
+		7B3F5C6C1B25E5E000DEDE70 /* STMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMTableViewCell.h; sourceTree = "<group>"; };
+		7B3F5C6D1B25E5E000DEDE70 /* STMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMTableViewCell.m; sourceTree = "<group>"; };
+		7B3F5C6E1B25E5E000DEDE70 /* STMTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = STMTableViewCell.xib; sourceTree = "<group>"; };
+		7BCB35A91B21959300D5CC44 /* STMTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMTableViewController.h; sourceTree = "<group>"; };
+		7BCB35AA1B21959300D5CC44 /* STMTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMTableViewController.m; sourceTree = "<group>"; };
+		7BCB35AC1B2195AC00D5CC44 /* STMTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMTableViewModel.h; sourceTree = "<group>"; };
+		7BCB35AD1B2195AC00D5CC44 /* STMTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMTableViewModel.m; sourceTree = "<group>"; };
 		7BCB8D391AA8623900F4FFA9 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = STMReactiveViewController/Storyboard.storyboard; sourceTree = "<group>"; };
 		7BCB8D4F1AA9A22800F4FFA9 /* STMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMDetailViewController.h; sourceTree = "<group>"; };
 		7BCB8D501AA9A22800F4FFA9 /* STMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMDetailViewController.m; sourceTree = "<group>"; };
@@ -138,6 +152,7 @@
 				6003F59D195388D20070C39A /* STMAppDelegate.m */,
 				6003F5A5195388D20070C39A /* STMViewController.h */,
 				6003F5A6195388D20070C39A /* STMViewController.m */,
+				7BCB35AF1B21963900D5CC44 /* TableView */,
 				7BCB8D4F1AA9A22800F4FFA9 /* STMDetailViewController.h */,
 				7BCB8D501AA9A22800F4FFA9 /* STMDetailViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
@@ -195,6 +210,30 @@
 				FDF5F99C1C5C3E070587B2A2 /* Pods-Tests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		7B3F5C711B25E5E400DEDE70 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				7B3F5C6C1B25E5E000DEDE70 /* STMTableViewCell.h */,
+				7B3F5C6D1B25E5E000DEDE70 /* STMTableViewCell.m */,
+				7B3F5C6E1B25E5E000DEDE70 /* STMTableViewCell.xib */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
+		7BCB35AF1B21963900D5CC44 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				7BCB35A91B21959300D5CC44 /* STMTableViewController.h */,
+				7BCB35AA1B21959300D5CC44 /* STMTableViewController.m */,
+				7B3F5C711B25E5E400DEDE70 /* TableView */,
+				7BCB35AC1B2195AC00D5CC44 /* STMTableViewModel.h */,
+				7BCB35AD1B2195AC00D5CC44 /* STMTableViewModel.m */,
+				7B3F5C691B25E3AB00DEDE70 /* STMCellViewModel.h */,
+				7B3F5C6A1B25E3AB00DEDE70 /* STMCellViewModel.m */,
+			);
+			name = TableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +317,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B3F5C701B25E5E000DEDE70 /* STMTableViewCell.xib in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				7BCB8D3A1AA8623900F4FFA9 /* Storyboard.storyboard in Resources */,
@@ -362,8 +402,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B3F5C6B1B25E3AB00DEDE70 /* STMCellViewModel.m in Sources */,
 				6003F59E195388D20070C39A /* STMAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* STMViewController.m in Sources */,
+				7BCB35AE1B2195AC00D5CC44 /* STMTableViewModel.m in Sources */,
+				7B3F5C6F1B25E5E000DEDE70 /* STMTableViewCell.m in Sources */,
+				7BCB35AB1B21959300D5CC44 /* STMTableViewController.m in Sources */,
 				7BCB8D511AA9A22800F4FFA9 /* STMDetailViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
