@@ -12,27 +12,35 @@
 - (instancetype)init {
     if (self = [super init]) {
        
-        RAC(self,dataSource) = [[[[[RACSignal interval:2 onScheduler:RACScheduler.mainThreadScheduler] startWith:[NSDate date]]
-                                 take:20]
-                                map:^id(NSDate* value) {
-                                    return [[STMCellViewModel alloc]  initWithDate:value];
-                                }]
-                                scanWithStart:@[] reduce:^id(id running, id next) {
-                                    NSMutableArray* array = [NSMutableArray arrayWithArray:running];
-                                    [array insertObject:next atIndex:0];
-                                    return array;
-                                }];
+        NSMutableArray* array = [NSMutableArray new];
+        for (NSInteger i = 1;i <1000;i++) {
+            NSDate* d = [NSDate dateWithTimeIntervalSinceNow:(60*60*24*i)];
+            [array addObject:d];
+        }
+        
+        BOOL multisection  = YES ;
+        if (!multisection) {
+            self.dataSource = array;
+        }
+        else {
+            self.sectionedDataSource = @[@[[NSDate date]],array];
+        }
+       
     }
     return self;
 }
+
 - (NSString *)cellIdentifierAtIndexPath:(NSIndexPath *)indexPath {
     return @"STMTableViewCell";
 }
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return section == 0?@"Today":@"Next";
+}
 
-- (id)viewModelAtIndexPath:(NSIndexPath *)indexPath {
-    return self.dataSource[indexPath.row];
+- (id)cellViewModelFromModel:(id)model {
+    NSLog(@"%@",model);
+    return [[STMCellViewModel alloc] initWithDate:model];
 }
-- (void)bindCell:(UITableViewCell*)cell toViewModelAtIndexPath:(NSIndexPath *)indexPath {
-    [cell setViewModel:[self viewModelAtIndexPath:indexPath]];
-}
+
+
 @end

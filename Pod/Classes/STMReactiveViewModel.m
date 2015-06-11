@@ -7,8 +7,10 @@
 //
 
 #import "STMReactiveViewModel.h"
-
+#import <EXTScope.h>
 @interface STMReactiveViewModel()
+//@property (nonatomic,strong) RACSequence* rac_viewModelsSequence;
+@property (nonatomic,strong) NSArray* viewModelsSequence;
 @end
 @implementation UITableViewCell(STMReactiveViewModel)
 - (id)viewModel{return nil;}
@@ -20,32 +22,74 @@
 @end
 
 @implementation STMReactiveViewModel
-@synthesize dataSource = _dataSource;
+@synthesize sectionedDataSource = _sectionedDataSource;
 @synthesize rac_signalForUpdates = _rac_signalForUpdates;
 
-- (RACSignal *)rac_signalForUpdates {
-    if (!_rac_signalForUpdates) {
-        _rac_signalForUpdates = RACObserve(self, dataSource);
+
+- (instancetype)init {
+    if (self = [super init]) {
+        @weakify(self);
+        RAC(self, viewModelsSequence) = [self.rac_signalForUpdates map:^id(NSArray* sectionedDataSource) {
+             @strongify(self);
+            if (!sectionedDataSource) return nil;
+            return [self viewModelsSequenceFromDataSource];
+        }];
+        return self;
     }
-    return _rac_signalForUpdates;
-}
-- (NSInteger)numberOfSections {
-    return 1;
-}
-- (NSInteger)numberOfItemsInSection:(NSInteger)section {
-    return [self.dataSource count];
-}
-- (id)modelAtIndexPath:(NSIndexPath *)indexPath {
-    return self.dataSource[indexPath.row];
-}
-- (id)viewModelAtIndexPath:(NSIndexPath *)indexPath {
     return nil;
 }
+- (void)setDataSource:(NSArray *)dataSource {
+
+    self.sectionedDataSource = dataSource?@[dataSource]:nil;
+}
+- (NSArray *)dataSource {
+    return self.sectionedDataSource.count == 1 ? self.sectionedDataSource.firstObject : nil;
+}
+- (NSInteger)numberOfSections {
+    return self.sectionedDataSource.count;
+}
+- (NSInteger)numberOfItemsInSection:(NSInteger)section {
+    return [self.sectionedDataSource[section] count];
+}
+- (id)modelAtIndexPath:(NSIndexPath *)indexPath {
+    return self.sectionedDataSource[indexPath.section][indexPath.row];
+}
+- (NSArray*) viewModelsSequenceFromDataSource {
+    @weakify(self);
+    return [self.sectionedDataSource.rac_sequence map:^id(NSArray* array) {
+        return [array.rac_sequence map:^id(id model) {
+            @strongify(self);
+            return [self cellViewModelFromModel:model];
+        }];
+    }].array;
+    
+};
+- (RACSignal *)rac_signalForUpdates {
+    if (!_rac_signalForUpdates) {
+        _rac_signalForUpdates = RACObserve(self, sectionedDataSource);
+    }
+
+    return _rac_signalForUpdates;
+}
+
+- (id) cellViewModelFromModel:(id)model {
+    return [NSNull new];
+}
+
+- (RACSequence*) rac_viewModelsSequenceInSection:(NSInteger) section {
+    return self.viewModelsSequence[section];
+}
+- (id)viewModelAtIndexPath:(NSIndexPath *)indexPath {
+    return [[[self rac_viewModelsSequenceInSection:indexPath.section] take:indexPath.row+1].array lastObject];
+}
 - (NSString *)cellIdentifierAtIndexPath:(NSIndexPath *)indexPath {
-    return @"";
+    return @"cellId";
+}
+- (NSArray *)allCellIdentifiers {
+    return @[@"cellId"];
 }
 - (void) bindCell:(id) cell toViewModelAtIndexPath:(NSIndexPath*) indexPath {
-    return;
+    [cell setViewModel:[self viewModelAtIndexPath:indexPath]];
 }
 #pragma mark UITableViewDataSource auto-implementations
 
