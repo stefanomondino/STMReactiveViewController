@@ -53,7 +53,12 @@
 }
 
 - (void) performSegueWithIdentifier:(NSString *)identifier viewModel:(id) viewModel {
-    [self performSegueWithIdentifier:identifier parameters:@{@"viewModel":viewModel}];
+    if (viewModel!=nil) {
+        [self performSegueWithIdentifier:identifier parameters:@{@"viewModel":viewModel}];
+    }
+    else {
+        [self performSegueWithIdentifier:identifier sender:nil];
+    }
 }
 
 - (RACSignal*) rac_viewWillAppear {
