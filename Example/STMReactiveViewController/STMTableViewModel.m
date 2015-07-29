@@ -29,7 +29,9 @@
     }
     return self;
 }
-
+- (NSArray *)allCellIdentifiers {
+    return @[@"STMTableViewCell"];
+}
 - (NSString *)cellIdentifierAtIndexPath:(NSIndexPath *)indexPath {
     return @"STMTableViewCell";
 }
