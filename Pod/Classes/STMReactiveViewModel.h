@@ -16,6 +16,8 @@
 @property (nonatomic,readwrite) id viewModel;
 @end
 
+@class STMFormItemViewModel;
+
 @interface STMReactiveViewModel : NSObject <UITableViewDataSource,UICollectionViewDataSource>
 @property (nonatomic,readwrite) NSArray* dataSource;
 
@@ -50,7 +52,18 @@
 
 /** Retrieve cell viewModel and apply it to cell */
 - (void) bindCell:(id) cell toViewModelAtIndexPath:(NSIndexPath*) indexPath;
+
+
+
+- (STMFormItemViewModel*) formItemWithKeypath:(NSString* ) keypath title:(NSString*)title cellIdentifier:(NSString*) cellIdentifier;
+
 @end
 
+@interface STMFormItemViewModel : STMReactiveViewModel
+@property (nonatomic,strong) NSString* cellIdentifier;
+@property (nonatomic,strong) NSString* title;
+@property (nonatomic,strong) id value;
+@property (nonatomic,assign) BOOL isValid;
+@end
 
 

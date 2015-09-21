@@ -9,10 +9,10 @@
 
 Pod::Spec.new do |s|
   s.name             = "STMReactiveViewController"
-  s.version          = "0.3.1"
+  s.version          = "0.4.0"
   s.summary          = "Utilities for UIViewController made simple with ReactiveCocoa signals"
   s.description      = <<-DESC
-                       STMReactiveViewController includes a collection of methods that aim to simplify common task such as passing of parameters in storyboard segues, presenting alerts and actionsheets and more.
+                       STMReactiveViewController includes a collection of methods that aim to simplify common task such as passing of parameters in storyboard segues, presenting alerts and actionsheets and simple form management.
                        * Markdown format.
                        * Don't worry about the indent, we strip it!
                        DESC
@@ -33,6 +33,6 @@ Pod::Spec.new do |s|
 
    s.public_header_files = 'Pod/Classes/**/*.h'
    # s.frameworks = 'UIKit', 'MapKit'
-   s.dependency 'ReactiveCocoa', '~> 2.3.1'
+   s.dependency 'ReactiveCocoa', '~> 2.0'
    s.dependency 'libextobjc/EXTScope'
 end

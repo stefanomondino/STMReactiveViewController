@@ -8,6 +8,7 @@
 
 #import "STMReactiveViewModel.h"
 #import <EXTScope.h>
+@class STMFormItemViewModel;
 @interface STMReactiveViewModel()
 //@property (nonatomic,strong) RACSequence* rac_viewModelsSequence;
 @property (nonatomic,strong) NSArray* viewModelsSequence;
@@ -19,6 +20,9 @@
 @implementation UICollectionViewCell(STMReactiveViewModel)
 - (id)viewModel{return nil;}
 - (void)setViewModel:(id)viewModel{;}
+@end
+
+@implementation STMFormItemViewModel
 @end
 
 @implementation STMReactiveViewModel
@@ -121,5 +125,28 @@
     return [self numberOfItemsInSection:section];
 }
 
+#pragma mark Forms
+
+- (STMFormItemViewModel*) formItemWithKeypath:(NSString* ) keypath title:(NSString*)title cellIdentifier:(NSString*) cellIdentifier {
+    @weakify(self);
+    STMFormItemViewModel* vm = [STMFormItemViewModel new];
+    vm.title = title;
+    vm.cellIdentifier = cellIdentifier;
+    
+    RAC(vm,value) = [[self rac_valuesForKeyPath:keypath observer:self] distinctUntilChanged];
+    
+    [[RACObserve(vm, value) distinctUntilChanged] subscribeNext:^(id x) {
+        @strongify(self);
+        [self setValue:x forKeyPath:keypath];
+    }];
+    RAC(vm, isValid) = [RACObserve(vm, value) map:^id(id value) {
+        return @YES;
+    }];
+    return vm;
+}
+
+
 
 @end
+
+
