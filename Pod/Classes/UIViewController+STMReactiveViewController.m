@@ -7,7 +7,6 @@
 //
 
 #import "UIViewController+STMReactiveViewController.h"
-#import <EXTScope.h>
 
 
 @implementation NSError (STMReactiveViewController)

@@ -7,7 +7,6 @@
 //
 
 #import "STMReactiveViewModel.h"
-#import <EXTScope.h>
 @class STMFormItemViewModel;
 @interface STMReactiveViewModel()
 //@property (nonatomic,strong) RACSequence* rac_viewModelsSequence;
