@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <ReactiveCocoa.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface NSError (STMReactiveViewController)
 + (NSError*) stm_errorWithMessage:(NSString*) message;
