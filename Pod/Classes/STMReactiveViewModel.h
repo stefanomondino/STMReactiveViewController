@@ -56,7 +56,7 @@
 
 
 - (STMFormItemViewModel*) formItemWithKeypath:(NSString* ) keypath title:(NSString*)title cellIdentifier:(NSString*) cellIdentifier;
-
+- (STMFormItemViewModel*) formItemWithKeypath:(NSString* ) keypath title:(NSString*)title cellIdentifier:(NSString*) cellIdentifier itemClass:(Class) itemClass;
 @end
 
 @interface STMFormItemViewModel : STMReactiveViewModel

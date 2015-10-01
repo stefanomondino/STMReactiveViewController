@@ -125,10 +125,12 @@
 }
 
 #pragma mark Forms
-
 - (STMFormItemViewModel*) formItemWithKeypath:(NSString* ) keypath title:(NSString*)title cellIdentifier:(NSString*) cellIdentifier {
+    return [self formItemWithKeypath:keypath title:title cellIdentifier:cellIdentifier itemClass:[STMFormItemViewModel class]];
+}
+- (STMFormItemViewModel*) formItemWithKeypath:(NSString* ) keypath title:(NSString*)title cellIdentifier:(NSString*) cellIdentifier itemClass:(Class) itemClass {
     @weakify(self);
-    STMFormItemViewModel* vm = [STMFormItemViewModel new];
+    STMFormItemViewModel* vm = [itemClass new];
     vm.title = title;
     vm.cellIdentifier = cellIdentifier;
     
