@@ -274,6 +274,7 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				02ED2F9560C3922F35B595EB /* Copy Pods Resources */,
+				26209401E451E6CDE1A20D85 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -293,6 +294,7 @@
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
 				45B4D865FD586B1FF7424A1D /* Copy Pods Resources */,
+				472B659C846F0CE09D80654E /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -377,6 +379,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STMReactiveViewController/Pods-STMReactiveViewController-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		26209401E451E6CDE1A20D85 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STMReactiveViewController/Pods-STMReactiveViewController-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		45B4D865FD586B1FF7424A1D /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -390,6 +407,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tests/Pods-Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		472B659C846F0CE09D80654E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tests/Pods-Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		785111ADAE6E56E412C58D5B /* Check Pods Manifest.lock */ = {

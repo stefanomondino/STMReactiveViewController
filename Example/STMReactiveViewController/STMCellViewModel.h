@@ -9,6 +9,6 @@
 #import "STMReactiveViewModel.h"
 
 @interface STMCellViewModel : STMReactiveViewModel
-- (instancetype) initWithDate:(NSDate*) date;
-@property (nonatomic,readonly) NSString* title;
+- (instancetype) initWithTitle:(NSString*) string;
+@property (nonatomic,strong) NSString* title;
 @end

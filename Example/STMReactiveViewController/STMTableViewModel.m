@@ -8,22 +8,25 @@
 
 #import "STMTableViewModel.h"
 #import "STMCellViewModel.h"
+#import <LoremIpsum.h>
 @implementation STMTableViewModel
 - (instancetype)init {
     if (self = [super init]) {
        
+        
+        /*This datasource doesn't make particular sense at all, since I'm using random words as my models. In concrete use cases, your models should can be NSDictionaries, native objects, NSManagedObjects or whatever you will need. */
         NSMutableArray* array = [NSMutableArray new];
         for (NSInteger i = 1;i <1000;i++) {
-            NSDate* d = [NSDate dateWithTimeIntervalSinceNow:(60*60*24*i)];
-            [array addObject:d];
+            NSString* string = [LoremIpsum wordsWithNumber:3];
+            [array addObject:string];
         }
         
-        BOOL multisection  = YES ;
+        BOOL multisection  = YES ; /*You can change this flag at compile time to switch on/off sections in tableView*/
         if (!multisection) {
             self.dataSource = array;
         }
         else {
-            self.sectionedDataSource = @[@[[NSDate date]],array];
+            self.sectionedDataSource = @[@[@"custom, not-loremipsumed word"],array];
         }
        
     }
@@ -36,12 +39,12 @@
     return @"STMTableViewCell";
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return section == 0?@"Today":@"Next";
+    return section == 0?@"Highlight":@"All";
 }
 
 - (id)cellViewModelFromModel:(id)model {
     NSLog(@"%@",model);
-    return [[STMCellViewModel alloc] initWithDate:model];
+    return [[STMCellViewModel alloc] initWithTitle:model];
 }
 
 

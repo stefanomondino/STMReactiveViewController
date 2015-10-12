@@ -8,21 +8,14 @@
 
 #import "STMCellViewModel.h"
 @interface STMCellViewModel()
-@property (nonatomic,strong) NSDate * date;
-@property (nonatomic,strong) NSDateFormatter* formatter;
 @end
 @implementation STMCellViewModel
-- (instancetype) initWithDate:(NSDate*) date {
+- (instancetype) initWithTitle:(NSString*) title {
 
     if (self = [super init]){
-        self.date = date;
-        self.formatter = [NSDateFormatter new];
-        self.formatter.dateFormat = [NSDateFormatter dateFormatFromTemplate:@"dd/MM/yyyy HH:mm:ss" options:0 locale:[NSLocale currentLocale]];
+        self.title = title;
         return self;
     }
     return nil;
-}
-- (NSString *)title {
-    return [self.formatter stringFromDate:self.date];
 }
 @end

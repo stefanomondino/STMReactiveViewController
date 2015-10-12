@@ -63,12 +63,33 @@
 - (void) performSegueWithIdentifier:(NSString *)identifier viewModel:(id) viewModel;
 
 //TODO write documentation
-
+/**
+Automatically creates an appropriate UIAlertView/UIAlertController (based upon system version), presents it and sends clicked button index as next. Alert presentation will happen lazily upon signal subscription.
+ Subclasses may completely rewrite implementation to be able to show custom modal UI with custom views that share similar behavior with UIAlertView (a view that present multiple choice to end user) and use choices in a chain of operations.
+ @param title The alert's title
+ @param message The alert's message
+ @param cancelButtonTitle A title for cancel button
+ @params otherButtonTitles An array for additional (optional) titles for other buttons
+ @return A signal that will present an appropriate UIAlert/UIAlertController upon subscription, will send clicked button index once and then complete. Cancel button index is 0.
+ */
 - (RACSignal*) rac_showAlertWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSArray*) otherButtonTitles;
+
+/**
+ Automatically creates an appropriate UIActionSheet/UIAlertController (based upon system version), presents it and sends clicked button index as next. Action sheet presentation will happen lazily upon signal subscription.
+ Subclasses may completely rewrite implementation to be able to show custom modal UI with custom views that share similar behavior with UIActionSheet (a view that present multiple choice to end user) and use choices in a chain of operations.
+ @param title The actionSheet's title
+ @param message The actionSheet's message
+ @param cancelButtonTitle A title for cancel button
+ @params otherButtonTitles An array for additional (UIActionSheet/UIAlertController upon subscription, will send clicked button index once and then complete. Cancel button index is 0.
+ */
 - (RACSignal*) rac_showActionSheetWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSArray*) otherButtonTitles;
+
+
+
+- (RACSignal*) rac_showErrorsFromCommand:(RACCommand*) command;
+- (RACSignal*) rac_showLoaderFromCommand:(RACCommand*) command;
 - (RACSignal*) rac_errorSignalWithMessage:(NSString*)message;
 - (UIView*) stm_showLoader;
 - (void) stm_hideLoader;
-- (RACSignal*) rac_showErrorsFromCommand:(RACCommand*) command;
-- (RACSignal*) rac_showLoaderFromCommand:(RACCommand*) command;
+
 @end

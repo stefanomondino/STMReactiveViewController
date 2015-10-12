@@ -2,6 +2,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'STMReactiveViewController', :exclusive => true do
   pod "STMReactiveViewController", :path => "../"
+  pod 'LoremIpsum'
 end
 
 target 'Tests', :exclusive => true do
