@@ -21,6 +21,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		74B95484BDDE3C1BAE64DC57 /* libPods-STMReactiveViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3490F1AD41D4CBB264479FE /* libPods-STMReactiveViewController.a */; };
+		7B1108811BCC0FD0004D008C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B1108801BCC0FD0004D008C /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		7B3441681BAFEDCF0043E6EF /* STMFormViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3441671BAFEDCF0043E6EF /* STMFormViewModel.m */; settings = {ASSET_TAGS = (); }; };
 		7B34416C1BAFEDF50043E6EF /* STMFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B34416B1BAFEDF50043E6EF /* STMFormViewController.m */; settings = {ASSET_TAGS = (); }; };
 		7B3441701BAFEE260043E6EF /* STMFormTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B34416E1BAFEE260043E6EF /* STMFormTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -72,6 +73,7 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		625BBD231A93CBA6C336CEC2 /* STMReactiveViewController.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = STMReactiveViewController.podspec; path = ../STMReactiveViewController.podspec; sourceTree = "<group>"; };
+		7B1108801BCC0FD0004D008C /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		7B3441661BAFEDCF0043E6EF /* STMFormViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMFormViewModel.h; sourceTree = "<group>"; };
 		7B3441671BAFEDCF0043E6EF /* STMFormViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMFormViewModel.m; sourceTree = "<group>"; };
 		7B34416A1BAFEDF50043E6EF /* STMFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMFormViewController.h; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				7BCB8D501AA9A22800F4FFA9 /* STMDetailViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				7B1108801BCC0FD0004D008C /* Launch Screen.storyboard */,
 			);
 			path = STMReactiveViewController;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B1108811BCC0FD0004D008C /* Launch Screen.storyboard in Resources */,
 				7B3F5C701B25E5E000DEDE70 /* STMTableViewCell.xib in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				7B3441711BAFEE260043E6EF /* STMFormTableViewCell.xib in Resources */,
@@ -590,7 +594,6 @@
 			baseConfigurationReference = 1C67412381D18F4BB2EB8AA4 /* Pods-STMReactiveViewController.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "STMReactiveViewController/STMReactiveViewController-Prefix.pch";
 				INFOPLIST_FILE = "STMReactiveViewController/STMReactiveViewController-Info.plist";
@@ -605,7 +608,6 @@
 			baseConfigurationReference = 4697A4874610B17F36F8C327 /* Pods-STMReactiveViewController.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "STMReactiveViewController/STMReactiveViewController-Prefix.pch";
 				INFOPLIST_FILE = "STMReactiveViewController/STMReactiveViewController-Info.plist";
