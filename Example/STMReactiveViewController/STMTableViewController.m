@@ -19,9 +19,7 @@
     [super viewDidLoad];
      @weakify(self);
     self.viewModel = [STMTableViewModel new];
-    for (NSString* cellId in self.viewModel.allCellIdentifiers) {
-        [self.tableView registerNib:[UINib nibWithNibName:cellId bundle:nil] forCellReuseIdentifier:cellId];
-    }
+    [self.viewModel registerCellsInTableView:self.tableView];
     self.tableView.dataSource = self.viewModel;
     [self.viewModel.rac_signalForUpdates subscribeNext:^(id x) {
          @strongify(self);

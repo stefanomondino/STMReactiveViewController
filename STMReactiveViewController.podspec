@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "STMReactiveViewController"
-  s.version          = "0.4.1"
+  s.version          = "0.5.1"
   s.summary          = "Utilities for UIViewController made simple with ReactiveCocoa signals"
   s.description      = <<-DESC
                        STMReactiveViewController includes a collection of methods that aim to simplify common task such as passing of parameters in storyboard segues, presenting alerts and actionsheets and simple form management.
