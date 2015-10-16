@@ -7,9 +7,9 @@
 //
 
 #import "STMReactiveViewModel.h"
+#import <objc/runtime.h>
 @class STMFormItemViewModel;
-@interface STMReactiveViewModel()
-//@property (nonatomic,strong) RACSequence* rac_viewModelsSequence;
+@interface NSObject(STMReactiveViewModel_Private)
 @property (nonatomic,strong) NSArray* viewModelsSequence;
 @end
 @implementation UITableViewCell(STMReactiveViewModel)
@@ -21,26 +21,48 @@
 - (void)setViewModel:(id)viewModel{;}
 @end
 
-@implementation STMFormItemViewModel
-@end
-
-@implementation STMReactiveViewModel
-@synthesize sectionedDataSource = _sectionedDataSource;
-@synthesize rac_signalForUpdates = _rac_signalForUpdates;
 
 
-- (instancetype)init {
-    if (self = [super init]) {
-        @weakify(self);
-        RAC(self, viewModelsSequence) = [self.rac_signalForUpdates map:^id(NSArray* sectionedDataSource) {
-             @strongify(self);
-            if (!sectionedDataSource) return nil;
-            return [self viewModelsSequenceFromDataSource];
-        }];
-        return self;
-    }
-    return nil;
+@implementation NSObject(STMReactiveViewModel)
+;
+
+
+- (void)setSectionedDataSource:(NSArray *)sectionedDataSource {
+    objc_setAssociatedObject(self, @selector(sectionedDataSource), sectionedDataSource, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
+- (NSArray *)sectionedDataSource {
+   return objc_getAssociatedObject(self, @selector(sectionedDataSource));
+}
+- (void)setRac_signalForUpdates:(RACSignal *)rac_signalForUpdates {
+    objc_setAssociatedObject(self, @selector(rac_signalForUpdates), rac_signalForUpdates, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (RACSignal *)rac_signalForUpdates {
+    id obj = objc_getAssociatedObject(self, @selector(rac_signalForUpdates));
+    if (!obj) {
+        obj = RACObserve(self, sectionedDataSource);
+        [self setRac_signalForUpdates:obj];
+    }
+    
+    return obj;
+}
+
+- (void)setViewModelsSequence:(NSArray *)viewModelsSequence {
+    objc_setAssociatedObject(self, @selector(viewModelsSequence), viewModelsSequence, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+- (NSArray *)viewModelsSequence {
+    return objc_getAssociatedObject(self, @selector(viewModelsSequence));
+}
+- (void) stm_setupReactiveViewModel {
+    @weakify(self);
+    RAC(self, viewModelsSequence) = [self.rac_signalForUpdates map:^id(NSArray* sectionedDataSource) {
+        @strongify(self);
+        if (!sectionedDataSource) return nil;
+        return [self viewModelsSequenceFromDataSource];
+    }];
+}
+
+
 - (void)setDataSource:(NSArray *)dataSource {
 
     self.sectionedDataSource = dataSource?@[dataSource]:nil;
@@ -67,13 +89,7 @@
     }].array;
     
 };
-- (RACSignal *)rac_signalForUpdates {
-    if (!_rac_signalForUpdates) {
-        _rac_signalForUpdates = RACObserve(self, sectionedDataSource);
-    }
 
-    return _rac_signalForUpdates;
-}
 
 - (id) cellViewModelFromModel:(id)model {
     return [NSNull new];
@@ -93,6 +109,17 @@
 }
 - (void) bindCell:(id) cell toViewModelAtIndexPath:(NSIndexPath*) indexPath {
     [cell setViewModel:[self viewModelAtIndexPath:indexPath]];
+}
+- (void) registerCellsInTableView:(UITableView*) tableView {
+    for (NSString* cellId in self.allCellIdentifiers) {
+        [tableView registerNib:[UINib nibWithNibName:cellId bundle:nil] forCellReuseIdentifier:cellId];
+    }
+}
+
+- (void) registerCellsInCollectionView:(UICollectionView*) collectionView {
+    for (NSString* cellId in self.allCellIdentifiers) {
+        [collectionView registerNib:[UINib nibWithNibName:cellId bundle:nil] forCellWithReuseIdentifier:cellId];
+    }
 }
 #pragma mark UITableViewDataSource auto-implementations
 
@@ -124,30 +151,19 @@
     return [self numberOfItemsInSection:section];
 }
 
-#pragma mark Forms
-- (STMFormItemViewModel*) formItemWithKeypath:(NSString* ) keypath title:(NSString*)title cellIdentifier:(NSString*) cellIdentifier {
-    return [self formItemWithKeypath:keypath title:title cellIdentifier:cellIdentifier itemClass:[STMFormItemViewModel class]];
-}
-- (STMFormItemViewModel*) formItemWithKeypath:(NSString* ) keypath title:(NSString*)title cellIdentifier:(NSString*) cellIdentifier itemClass:(Class) itemClass {
-    @weakify(self);
-    STMFormItemViewModel* vm = [itemClass new];
-    vm.title = title;
-    vm.cellIdentifier = cellIdentifier;
-    
-    RAC(vm,value) = [[self rac_valuesForKeyPath:keypath observer:self] distinctUntilChanged];
-    
-    [[RACObserve(vm, value) distinctUntilChanged] subscribeNext:^(id x) {
-        @strongify(self);
-        [self setValue:x forKeyPath:keypath];
-    }];
-    RAC(vm, isValid) = [RACObserve(vm, value) map:^id(id value) {
-        return @YES;
-    }];
-    return vm;
-}
+
 
 
 
 @end
 
+@implementation STMReactiveViewModel
+- (instancetype)init {
+    if (self = [super init]) {
+        [self stm_setupReactiveViewModel];
+        return self;
+    }
+    return nil;
+}
+@end
 

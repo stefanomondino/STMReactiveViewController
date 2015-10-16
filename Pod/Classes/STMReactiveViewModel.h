@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
-
+#import "NSObject+STMFormViewModel.h"
 @interface UITableViewCell(STMReactiveViewModel)
 @property (nonatomic,readwrite) id viewModel;
 @end
@@ -18,7 +18,7 @@
 
 @class STMFormItemViewModel;
 
-@interface STMReactiveViewModel : NSObject <UITableViewDataSource,UICollectionViewDataSource>
+@interface NSObject(STMReactiveViewModel)  <UITableViewDataSource,UICollectionViewDataSource>
 @property (nonatomic,readwrite) NSArray* dataSource;
 
 /** Utility to quickly retrieve all cells identifier used by viewModel's logic and to be registered in viewController's tableView. Note: works best if cellIdentifier is equal to custom cell's class*/
@@ -27,6 +27,9 @@
 
 /** Triggered every time dataSource changes*/
 @property (nonatomic,readwrite) RACSignal* rac_signalForUpdates;
+
+/** Setup viewModel class for proper observation */
+- (void) stm_setupReactiveViewModel;
 
 /** Default implementation has 1 section*/
 - (NSInteger) numberOfSections;
@@ -53,17 +56,11 @@
 /** Retrieve cell viewModel and apply it to cell */
 - (void) bindCell:(id) cell toViewModelAtIndexPath:(NSIndexPath*) indexPath;
 
-
-
-- (STMFormItemViewModel*) formItemWithKeypath:(NSString* ) keypath title:(NSString*)title cellIdentifier:(NSString*) cellIdentifier;
-- (STMFormItemViewModel*) formItemWithKeypath:(NSString* ) keypath title:(NSString*)title cellIdentifier:(NSString*) cellIdentifier itemClass:(Class) itemClass;
+- (void) registerCellsInTableView:(UITableView*) tableView;
+- (void) registerCellsInCollectionView:(UICollectionView*) collectionView;
 @end
 
-@interface STMFormItemViewModel : STMReactiveViewModel
-@property (nonatomic,strong) NSString* cellIdentifier;
-@property (nonatomic,strong) NSString* title;
-@property (nonatomic,strong) id value;
-@property (nonatomic,assign) BOOL isValid;
+/** Extend this class if you don't need your own base implementation */
+@interface STMReactiveViewModel : NSObject
 @end
-
 
