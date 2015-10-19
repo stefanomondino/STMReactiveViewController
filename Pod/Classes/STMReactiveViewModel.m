@@ -172,6 +172,8 @@
 - (NSArray *)allCellIdentifiers {
     return [super stm_allCellIdentifiers];
 }
+
+
 - (NSArray *)stm_dataSource {
     return self.dataSource;
 }
@@ -196,6 +198,12 @@
 }
 - (RACSignal *)rac_signalForUpdates {
     return [super stm_rac_signalForUpdates];
+}
+- (void)setStm_rac_signalForUpdates:(RACSignal *)stm_rac_signalForUpdates {
+    return [self setRac_signalForUpdates:stm_rac_signalForUpdates];
+}
+- (void)setRac_signalForUpdates:(RACSignal *)rac_signalForUpdates {
+    return [super setStm_rac_signalForUpdates:rac_signalForUpdates];
 }
 
 - (id)stm_cellViewModelFromModel:(id)model {
