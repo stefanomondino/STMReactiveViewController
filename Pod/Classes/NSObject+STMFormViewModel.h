@@ -11,4 +11,5 @@
 @interface NSObject (STMFormViewModel)
 - (STMFormItemViewModel*) formItemWithKeypath:(NSString* ) keypath title:(NSString*)title cellIdentifier:(NSString*) cellIdentifier;
 - (STMFormItemViewModel*) formItemWithKeypath:(NSString* ) keypath title:(NSString*)title cellIdentifier:(NSString*) cellIdentifier itemClass:(Class) itemClass;
+- (id<STMFormItemViewModel>) formItemWithKeypath:(NSString* ) keypath title:(NSString*)title cellIdentifier:(NSString*) cellIdentifier itemClass:(Class) itemClass validationBlock:(BOOL (^)(id value))validationBlock;
 @end
