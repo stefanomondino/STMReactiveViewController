@@ -228,7 +228,7 @@
 }
 
 - (NSArray *)viewModelsSequenceFromDataSource {
-    return self.viewModelsSequenceFromDataSource;
+    return self.stm_viewModelsSequenceFromDataSource;
 }
 - (RACSequence *)rac_viewModelsSequenceInSection:(NSInteger)section {
     return [self stm_rac_viewModelsSequenceInSection:section];
