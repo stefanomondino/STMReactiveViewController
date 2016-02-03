@@ -22,6 +22,7 @@
     
     id<STMFormItemViewModel> vm = [itemClass new];
     vm.title = title;
+    vm.keypath = keypath;
     vm.cellIdentifier = cellIdentifier;
     vm.validationBlock = validationBlock;
     RAC(vm,value) = [[self rac_valuesForKeyPath:keypath observer:self] distinctUntilChanged];

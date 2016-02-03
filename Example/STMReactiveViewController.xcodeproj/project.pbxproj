@@ -21,11 +21,11 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		74B95484BDDE3C1BAE64DC57 /* libPods-STMReactiveViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3490F1AD41D4CBB264479FE /* libPods-STMReactiveViewController.a */; };
-		7B1108811BCC0FD0004D008C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B1108801BCC0FD0004D008C /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
-		7B3441681BAFEDCF0043E6EF /* STMFormViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3441671BAFEDCF0043E6EF /* STMFormViewModel.m */; settings = {ASSET_TAGS = (); }; };
-		7B34416C1BAFEDF50043E6EF /* STMFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B34416B1BAFEDF50043E6EF /* STMFormViewController.m */; settings = {ASSET_TAGS = (); }; };
-		7B3441701BAFEE260043E6EF /* STMFormTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B34416E1BAFEE260043E6EF /* STMFormTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		7B3441711BAFEE260043E6EF /* STMFormTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B34416F1BAFEE260043E6EF /* STMFormTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		7B1108811BCC0FD0004D008C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B1108801BCC0FD0004D008C /* Launch Screen.storyboard */; };
+		7B3441681BAFEDCF0043E6EF /* STMFormViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3441671BAFEDCF0043E6EF /* STMFormViewModel.m */; };
+		7B34416C1BAFEDF50043E6EF /* STMFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B34416B1BAFEDF50043E6EF /* STMFormViewController.m */; };
+		7B3441701BAFEE260043E6EF /* STMFormTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B34416E1BAFEE260043E6EF /* STMFormTableViewCell.m */; };
+		7B3441711BAFEE260043E6EF /* STMFormTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B34416F1BAFEE260043E6EF /* STMFormTableViewCell.xib */; };
 		7B3F5C6B1B25E3AB00DEDE70 /* STMCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F5C6A1B25E3AB00DEDE70 /* STMCellViewModel.m */; };
 		7B3F5C6F1B25E5E000DEDE70 /* STMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F5C6D1B25E5E000DEDE70 /* STMTableViewCell.m */; };
 		7B3F5C701B25E5E000DEDE70 /* STMTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B3F5C6E1B25E5E000DEDE70 /* STMTableViewCell.xib */; };
@@ -277,6 +277,7 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				02ED2F9560C3922F35B595EB /* Copy Pods Resources */,
+				388426B89B47E65A63F0AB27 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -296,6 +297,7 @@
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
 				45B4D865FD586B1FF7424A1D /* Copy Pods Resources */,
+				56A4A4AC3F49184AD359643F /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -381,6 +383,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STMReactiveViewController/Pods-STMReactiveViewController-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		388426B89B47E65A63F0AB27 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STMReactiveViewController/Pods-STMReactiveViewController-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		45B4D865FD586B1FF7424A1D /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -394,6 +411,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tests/Pods-Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56A4A4AC3F49184AD359643F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tests/Pods-Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		785111ADAE6E56E412C58D5B /* Check Pods Manifest.lock */ = {

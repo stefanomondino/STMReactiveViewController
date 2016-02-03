@@ -10,7 +10,7 @@
 
 @implementation STMFormItemViewModel
 
-@synthesize cellIdentifier,title,value,isValid;
+@synthesize cellIdentifier,title,value,isValid,keypath;
 @synthesize validationBlock = _validationBlock;
 
 - (void)setValidationBlock:(BOOL (^)(id))validationBlock {

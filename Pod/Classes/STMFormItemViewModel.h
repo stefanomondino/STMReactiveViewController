@@ -11,6 +11,7 @@
 @protocol STMFormItemViewModel <NSObject>
 @property (nonatomic,strong) NSString* cellIdentifier;
 @property (nonatomic,strong) NSString* title;
+@property (nonatomic,strong) NSString* keypath;
 @property (nonatomic,strong) id value;
 @property (nonatomic, copy) BOOL (^validationBlock)(id value);
 @property (nonatomic,assign) BOOL isValid;
