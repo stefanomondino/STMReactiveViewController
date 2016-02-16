@@ -7,7 +7,7 @@
 //
 
 #import "UIViewController+STMReactiveViewController.h"
-
+#import <ReactiveCocoa/UIAlertView+RACSignalSupport.h>
 
 @implementation NSError (STMReactiveViewController)
 
@@ -115,13 +115,14 @@
              return [self rac_showAlertControllerWithTitle:title message:message cancelButtonTitle:cancelButtonTitle otherButtonTitles:otherButtonTitles style:UIAlertControllerStyleAlert];
         }
         else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButtonTitle otherButtonTitles: nil];
+           /* UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButtonTitle otherButtonTitles: nil];
             for (NSString* title in otherButtonTitles) {
                 [alert addButtonWithTitle:title];
             }
             alert.cancelButtonIndex = 0;
             [alert show];
             return [alert rac_buttonClickedSignal];
+            */
         }
         return [RACSignal empty];
     }] take:1];
@@ -138,7 +139,7 @@
         }
         else {
             
-            UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles: nil];
+            /*UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles: nil];
             for (NSString* title in otherButtonTitles) {
                 [actionSheet addButtonWithTitle:title];
             }
@@ -148,6 +149,7 @@
             return [[actionSheet rac_buttonClickedSignal] map:^id(NSNumber* value) {
                 return @(([value integerValue]+1)%(otherButtonTitles.count+1));
             }];
+             */
            
         }
         return [RACSignal empty];

@@ -7,7 +7,7 @@
 //
 
 #import "STMDetailViewController.h"
-#import <ReactiveCocoa.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
 @interface STMDetailViewController ()
 @property (nonatomic,weak) IBOutlet UILabel* lbl_text;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btn_close;

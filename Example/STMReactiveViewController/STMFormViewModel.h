@@ -6,7 +6,7 @@
 //  Copyright © 2015 Stefano Mondino. All rights reserved.
 //
 
-#import "STMReactiveViewModel.h"
+#import <STMReactiveViewController/STMReactiveViewModel.h>
 
 @interface STMFormViewModel : STMReactiveViewModel
 @property (nonatomic,strong) NSString* firstName;

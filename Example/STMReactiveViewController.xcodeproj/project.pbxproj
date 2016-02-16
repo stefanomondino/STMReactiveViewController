@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E2646AD083F8A19C4CEF66B /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFA35195CF651C7872EE068 /* Pods_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -20,7 +21,7 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		74B95484BDDE3C1BAE64DC57 /* libPods-STMReactiveViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3490F1AD41D4CBB264479FE /* libPods-STMReactiveViewController.a */; };
+		7A1ECAAE5CCD15692A06E923 /* Pods_STMReactiveViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2CE1AA92C7D57358962634 /* Pods_STMReactiveViewController.framework */; };
 		7B1108811BCC0FD0004D008C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B1108801BCC0FD0004D008C /* Launch Screen.storyboard */; };
 		7B3441681BAFEDCF0043E6EF /* STMFormViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3441671BAFEDCF0043E6EF /* STMFormViewModel.m */; };
 		7B34416C1BAFEDF50043E6EF /* STMFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B34416B1BAFEDF50043E6EF /* STMFormViewController.m */; };
@@ -33,7 +34,6 @@
 		7BCB35AE1B2195AC00D5CC44 /* STMTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB35AD1B2195AC00D5CC44 /* STMTableViewModel.m */; };
 		7BCB8D3A1AA8623900F4FFA9 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BCB8D391AA8623900F4FFA9 /* Storyboard.storyboard */; };
 		7BCB8D511AA9A22800F4FFA9 /* STMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB8D501AA9A22800F4FFA9 /* STMDetailViewController.m */; };
-		CCB1AF06C6FDB2407FA5DE2E /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D927F08A73D7C191EE688A /* libPods-Tests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,9 +48,9 @@
 
 /* Begin PBXFileReference section */
 		0703DBE85F871C23756B91B4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		08D927F08A73D7C191EE688A /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B44E890717E92BA347A5F9C /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		1C67412381D18F4BB2EB8AA4 /* Pods-STMReactiveViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STMReactiveViewController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STMReactiveViewController/Pods-STMReactiveViewController.debug.xcconfig"; sourceTree = "<group>"; };
+		1D2CE1AA92C7D57358962634 /* Pods_STMReactiveViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STMReactiveViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		397049FE434BE00A9230EC1F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		4697A4874610B17F36F8C327 /* Pods-STMReactiveViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STMReactiveViewController.release.xcconfig"; path = "Pods/Target Support Files/Pods-STMReactiveViewController/Pods-STMReactiveViewController.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* STMReactiveViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STMReactiveViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,7 +93,7 @@
 		7BCB8D391AA8623900F4FFA9 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = STMReactiveViewController/Storyboard.storyboard; sourceTree = "<group>"; };
 		7BCB8D4F1AA9A22800F4FFA9 /* STMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMDetailViewController.h; sourceTree = "<group>"; };
 		7BCB8D501AA9A22800F4FFA9 /* STMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMDetailViewController.m; sourceTree = "<group>"; };
-		A3490F1AD41D4CBB264479FE /* libPods-STMReactiveViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-STMReactiveViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEFA35195CF651C7872EE068 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDF5F99C1C5C3E070587B2A2 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,7 +105,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				74B95484BDDE3C1BAE64DC57 /* libPods-STMReactiveViewController.a in Frameworks */,
+				7A1ECAAE5CCD15692A06E923 /* Pods_STMReactiveViewController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +116,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				CCB1AF06C6FDB2407FA5DE2E /* libPods-Tests.a in Frameworks */,
+				1E2646AD083F8A19C4CEF66B /* Pods_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,8 +152,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				08D927F08A73D7C191EE688A /* libPods-Tests.a */,
-				A3490F1AD41D4CBB264479FE /* libPods-STMReactiveViewController.a */,
+				1D2CE1AA92C7D57358962634 /* Pods_STMReactiveViewController.framework */,
+				DEFA35195CF651C7872EE068 /* Pods_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -549,7 +549,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -582,7 +582,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

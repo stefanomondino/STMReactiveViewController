@@ -8,7 +8,7 @@
 
 #import "STMTableViewModel.h"
 #import "STMCellViewModel.h"
-#import <LoremIpsum.h>
+#import <LoremIpsum/LoremIpsum.h>
 @implementation STMTableViewModel
 - (instancetype)init {
     if (self = [super init]) {

@@ -7,7 +7,7 @@
 //
 
 #import "STMViewController.h"
-#import <UIViewController+STMReactiveViewController.h>
+#import <STMReactiveViewController/UIViewController+STMReactiveViewController.h>
 @interface STMViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *btn_goto2;
 @property (weak, nonatomic) IBOutlet UIButton *btn_modal;

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <STMReactiveViewModel.h>
+#import <STMReactiveViewController/STMReactiveViewModel.h>
 @interface STMFormTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *lbl_title;
 @property (weak, nonatomic) IBOutlet UITextField *txt_value;

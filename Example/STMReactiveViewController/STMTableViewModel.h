@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Stefano Mondino. All rights reserved.
 //
 
-#import "STMReactiveViewModel.h"
+#import <STMReactiveViewController/STMReactiveViewModel.h>
 
 @interface STMTableViewModel : STMReactiveViewModel
 
